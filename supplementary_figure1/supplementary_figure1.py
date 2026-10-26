@@ -152,10 +152,7 @@ RAW_DIAG = os.path.join(cfg.DATA_ROOT, 'H032_E352')
 RAW_DIAG_ARMS = {'7600+': os.path.join(cfg.DATA_ROOT, 'H032_E303'),
                  '8600': RAW_DIAG}
 LEVEL_STYLE = {'MS1 precursor': '-', 'MS2 fragment': '--'}
-SERIES_COLOR = {('7600+', 'MS1 precursor'): core.PALETTE_SINGLE[0],
-                ('7600+', 'MS2 fragment'): core.PALETTE_SINGLE[5],
-                ('8600', 'MS1 precursor'): core.PALETTE_SINGLE[1],
-                ('8600', 'MS2 fragment'): core.PALETTE_SINGLE[2]}
+SERIES_COLOR = {(a, l): COLOR[a] for a in COND_ORDER for l in LEVEL_STYLE}
 LEVEL_COLOR = {'MS1 precursor': core.PALETTE_SINGLE[2],
                'MS2 fragment': core.PALETTE_SINGLE[3]}
 LEVEL_LABEL = {'MS1 precursor': 'MS1', 'MS2 fragment': 'MS2'}
