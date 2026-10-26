@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zenotof8600_analytics"
+version = "1.0.0"
+description = "Analysis library and figure code for the ZenoTOF 8600 manuscript (PEAKS loaders, quantification, raw-file measurement, ZT Scan DIA Q1 analysis, plotting)."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Tim Heymann", email = "theymann@biochem.mpg.de"},
+    {name = "Claude (Anthropic)"},
+]
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.3",
+    "pandas>=2.3,<3",
+    "matplotlib>=3.10",
+    "scipy>=1.16",
+    "seaborn>=0.13",
+    "scikit-learn>=1.7",
+    "statsmodels>=0.14",
+    "pyarrow>=22.0",
+    "matplotlib-venn>=1.1",
+    "pyteomics>=4.7",
+    "directlfq>=0.3.3",
+    "alphabase>=1.7",
+    "h5py>=3.10",
+    "pypdf>=5",
+    "pillow>=10",
+    "hdf5plugin>=4",
+]
+
+[project.optional-dependencies]
+raw = ["alpharaw", "numba"]
+pdf = ["pypdfium2"]
+dev = ["pytest"]
+notebooks = ["jupyterlab>=4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["unit_tests"]
+pythonpath = ["src", "workflows"]
+markers = [
+    "slow: expensive characterization tests (e.g. DirectLFQ); deselect with -m 'not slow'",
+]

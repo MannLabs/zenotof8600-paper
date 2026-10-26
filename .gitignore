@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.nbi
+*.nbc
+.pytest_cache/
+*.egg-info/
+build/
+.venv*/
+/data/
+/raw/
+/output*/
+output_run*.log
+
+# tagged for deletion, never committed
+deleteme_*

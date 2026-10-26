@@ -1,0 +1,35 @@
+# Exact environment the ZenoTOF 8600 manuscript figures were produced with.
+#
+#   mamba env create -f environment.yml
+#   conda activate zenotof8600
+#   pip install -e .
+name: zenotof8600
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.12.12
+  - numpy=2.3.5
+  - pandas=2.3.3
+  - matplotlib=3.10.7
+  - scipy=1.16.3
+  - seaborn=0.13.2
+  - scikit-learn=1.7.2
+  - statsmodels=0.14.6
+  - pyarrow=22.0.0
+  - h5py=3.15.1
+  - pillow=12.0.0
+  - pip
+  - pip:
+      - matplotlib-venn==1.1.2
+      - pyteomics==4.7.5
+      - directlfq==0.3.3
+      - alphabase==1.7.2
+      - pypdf==6.16.2
+      - pypdfium2==5.13.0
+      - pytest==9.0.2
+      # raw-file measurement scripts only (Windows, SCIEX .wiff reader)
+      - alpharaw==0.4.8
+      - numba==0.62.1
+      - hdf5plugin==7.1.0  # also needed by the ztscan module
